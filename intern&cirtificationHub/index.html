@@ -1,0 +1,197 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internships & Free Certifications Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Internships & Free Certifications from Top MNCs</h1>
+        <p>Discover current internship and free certification programs from leading multinational companies like Google, Microsoft, Amazon, IBM, Meta, Apple, Oracle, Cisco, Intel, and Samsung.</p>
+    </header>
+
+    <main>
+        <section id="filters">
+            <label for="typeFilter">Filter by Type:</label>
+            <select id="typeFilter">
+                <option value="">All</option>
+                <option value="internship">Internships</option>
+                <option value="certification">Certifications</option>
+            </select>
+            <label for="statusFilter">Filter by Status:</label>
+            <select id="statusFilter">
+                <option value="">All</option>
+                <option value="Launching Now">Launching Now</option>
+                <option value="Active">Active</option>
+            </select>
+        </section>
+
+        <section id="programs-list">
+            <p>Loading programs... (Fetching from API)</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Internships Hub. Data powered by company APIs and database.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InternHub Pro - Internships & Free Certifications from Top MNCs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-briefcase"></i> InternHub Pro
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#internships" class="nav-link">Internships</a></li>
+                <!-- <li><a href="#certifications" class="nav-link">Certifications</a></li>
+                 -->
+                <li><a href="#internships" class="nav-link">Certifications</a></li>
+                
+                <li><a href="#about" class="nav-link">About</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Unlock Your Future with Top MNC Opportunities</h1>
+            <p>Explore internships and free certifications from leading companies like Google, Microsoft, Amazon, IBM, Meta, Apple, Oracle, Cisco, Intel, and Samsung. Stay updated on programs launching now!</p>
+            <button class="cta-button" onclick="loadPrograms('all')">
+                <i class="fas fa-search"></i> Find Opportunities
+            </button>
+        </div>
+    </section>
+
+    <!-- Search and Filters Section -->
+    <section class="search-section" id="internships">
+        <div class="container">
+            <input type="text" id="searchInput" placeholder="Search by company or title...">
+            <label for="typeFilter">Filter by Type:</label>
+            <select id="typeFilter">
+                <option value="">All</option>
+                <option value="internship">Internships</option>
+                <option value="certification">Certifications</option>
+            </select>
+            <label for="statusFilter">Filter by Status:</label>
+            <select id="statusFilter">
+                <option value="">All</option>
+                <option value="Launching Now">Launching Now</option>
+                <option value="Active">Active</option>
+            </select>
+        </div>
+    </section>
+
+    <!-- Tabs for Internships and Certifications -->
+    <section class="tabs-section">
+        <div class="container">
+            <div class="tab-buttons">
+                <button class="tab-button active" onclick="switchTab('internships')">
+                    <i class="fas fa-user-graduate"></i> Internships
+                </button>
+                <button class="tab-button" onclick="switchTab('certifications')">
+                    <i class="fas fa-certificate"></i> Certifications
+                </button>
+                <button class="tab-button" onclick="switchTab('all')">
+                    <i class="fas fa-list"></i> All Programs
+                </button>
+            </div>
+            <div id="programs-list" class="programs-grid">
+                <p class="loading">Loading professional opportunities... (Powered by API)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2>About InternHub Pro</h2>
+            <p>We aggregate real-time data from multinational companies to help you find internships and free certifications. Our platform uses secure APIs to fetch the latest launches from top MNCs.</p>
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-globe"></i>
+                    <h3>Global Opportunities</h3>
+                    <p>Programs from 10+ top companies worldwide.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-clock"></i>
+                    <h3>Real-Time Updates</h3>
+                    <p>Launching now? Get notified instantly.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-lock"></i>
+                    <h3>Secure & Free</h3>
+                    <p>All data fetched securely; no sign-up required.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>InternHub Pro</h3>
+                    <p>Your gateway to MNC careers.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Companies</h4>
+                    <ul>
+                        <li>Google</li>
+                        <li>Microsoft</li>
+                        <li>Amazon</li>
+                        <li>IBM</li>
+                        <li>Meta</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 InternHub Pro. All rights reserved. Data powered by company APIs and SQL database.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
